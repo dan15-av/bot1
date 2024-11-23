@@ -1,7 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 
-
+st.ballooms()
 # Show title and description.
 st.title("💬 my--apps")
 st.write(
