@@ -1,11 +1,11 @@
 import streamlit as st
 from openai import OpenAI
-
+st.feedback(options="thumbs", *, key=None, disabled=False, on_change=None, args=None, kwargs=None)
 
 # Show title and description.
-st.title("💬 Ayuda cibernetica")
+st.title("💬 Ayuda Cibernetica")
 st.write(
-   "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
+   "como te podemos ayuudar, alguna emergencia cibernetica? "
    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
 )
@@ -25,11 +25,11 @@ with st.chat_message("user"):
 stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
-            {"role": "system", "content": "You are an assistant."},
+            {"role": "system", "content": "You are an cyber police."},
             {"role": "user", "content": prompt}
         ],
         max_tokens=800,
-        temperature=0,
+        temperature=0.80,
     )
 respuesta = stream.choices[0].message.content
 with st.chat_message("assistant"):
