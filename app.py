@@ -1,6 +1,19 @@
 import streamlit as st
 from openai import OpenAI
-st.feedback(options="thumbs", *, key=None, disabled=False, on_change=None, args=None, kwargs=None)
+genre = st.radio(
+    "What's your favorite movie genre",
+    [":rainbow[Comedy]", "***Drama***", "Documentary :movie_camera:"],
+    captions=[
+        "Laugh out loud.",
+        "Get the popcorn.",
+        "Never stop learning.",
+    ],
+)
+
+if genre == ":rainbow[Comedy]":
+    st.write("You selected comedy.")
+else:
+    st.write("You didn't select comedy.")
 
 # Show title and description.
 st.title("💬 Ayuda Cibernetica")
